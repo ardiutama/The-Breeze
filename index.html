@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breeze Event Idea Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script type="importmap">
+{
+  "imports": {
+    "@google/genai": "https://esm.sh/@google/genai@^1.13.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <header>
+        <h1>Breeze Event Idea Generator</h1>
+        <p>AI-Powered Creativity for The Samaya Seminyak</p>
+    </header>
+
+    <main class="container">
+        <section class="controls-container">
+            <h2>Event Parameters</h2>
+            <form id="event-form">
+                <div class="form-group">
+                    <label for="event-month">Season / Month</label>
+                    <select id="event-month" name="month" aria-label="Select event month">
+                        <option value="any">Any Month</option>
+                        <option value="January">January</option>
+                        <option value="February">February</option>
+                        <option value="March">March</option>
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="audience-type">Target Audience</label>
+                    <select id="audience-type" name="audience" aria-label="Select target audience">
+                        <option value="any">Any</option>
+                        <option value="Couples">Couples / Romantic</option>
+                        <option value="Families">Families with Children</option>
+                        <option value="Expats & Locals">Expats & Locals</option>
+                        <option value="Luxury Tourists">Luxury Tourists</option>
+                        <option value="Corporate Groups">Corporate Groups</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="event-type">Event Type</label>
+                    <select id="event-type" name="type" aria-label="Select event type">
+                        <option value="any">Any</option>
+                        <option value="Signature Event">Signature Event (e.g., Full Moon Dinner)</option>
+                        <option value="Cultural Event">Cultural Event (e.g., Balinese Dance)</option>
+                        <option value="Food & Beverage Centric">F&B Centric (e.g., Wine Pairing)</option>
+                        <option value="Private Booking">Private Booking (e.g., Wedding)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="primary-goal">Primary Goal</label>
+                    <select id="primary-goal" name="goal" aria-label="Select primary goal">
+                        <option value="any">Any</option>
+                        <option value="Maximize Revenue">Maximize Revenue</option>
+                        <option value="Enhance Brand Image">Enhance Brand Image</option>
+                        <option value="Generate Social Media Buzz">Generate Social Media Buzz</option>
+                        <option value="Increase Weekday Traffic">Increase Weekday Traffic</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cuisine-focus">Cuisine Focus (Optional)</label>
+                    <input type="text" id="cuisine-focus" name="cuisine" placeholder="e.g., Seafood, Vegan, Balinese">
+                </div>
+
+                <button type="submit" id="generate-btn">
+                    <span class="btn-text">✨ Generate Idea</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+            </form>
+        </section>
+
+        <section class="results-container" aria-live="polite">
+            <h2>Generated Idea</h2>
+            <div id="loader" class="loader" role="status" style="display: none;">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+            <div id="output">
+                <p class="placeholder">Your tailored event concept will appear here. Adjust the parameters on the left and click "Generate Idea" to begin.</p>
+            </div>
+        </section>
+    </main>
+
+    <script type="module" src="index.tsx"></script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
